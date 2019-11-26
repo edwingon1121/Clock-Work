@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {fetchCoord} from './HelperFunc';
+import React, { useState, useEffect } from 'react';
+import { fetchCoord } from './HelperFunc';
 
 //WEATHER.GOV API - Need to pass lat and lon 
 //https://api.weather.gov/points/39.7456,-97.0892 
@@ -8,39 +8,48 @@ import {fetchCoord} from './HelperFunc';
 const Weather = (props) => {
 
 	const [success,setSuccess] = useState(false);
+	const [details, setDetails] = useState({temperature: 0, desc: "Sunny", city:'Los Angeles'});
 
-	const weather = (async () => {
-	const coord = await fetchCoord();
-	console.log(coord);
-	// const details = await getWeather(coord); 
-	})();
+		async function retrieveWeather() {
+			try{
+				const coord = await fetchCoord();
+				const forecast = await getWeather(coord);
 
+				setSuccess(true)
+				setDetails((prevState)=> { return {...prevState,temperature: forecast.temperature, desc: forecast.shortForecast,} })
 
-	// fetchCoord.then(coord => {
-	// 	console.log(coord);
-	// 	getWeather(coord)}); 
+			} catch (error){
+				console.log(error);
+			}
+		}
+
+		useEffect(() => { retrieveWeather(); },[])
+ 
 
 	function getWeather(coord){
 		console.log(coord);
+		setDetails((prevState) => {return{...prevState, city: coord[2]}});
 		const url = 'https://api.weather.gov/points/'+coord[0]+','+coord[1];
-	 fetch(url)
-	 .then(resp => resp.json())
-	 .then(resp => {
-			try{
-				const weatherStats = {city: '', temperature: '', forecast:''};
-				weatherStats.city = resp.properties.relativeLocation.properties.city;
 
-				fetch(resp.properties.forecastHourly).then(resp => resp.json())
-				.then(data => {
-						weatherStats.temperature = resp.properties.periods[0].temperature;
-						weatherStats.forecast = resp.properties.period[0].shortForecast;
-
-						setSuccess(true);
-				})
-			}catch(error){
-				return error;
+		return new Promise((resolve,reject) => {
+			try {
+				fetch(url)
+				.then(resp => {
+					// console.log(resp);
+					return resp.json()})
+				.then(resp => {
+					fetch(resp.properties.forecastHourly)
+					.then(resp => resp.json())
+					.then(resp => resp.properties.periods[0])
+					.then(data => { 
+						console.log('DONE!');
+						resolve(data)
+					})
+				})	
+			} catch(error){
+				reject(error);
 			}
-		}) 
+		})
 	}
 
 	
@@ -48,13 +57,14 @@ const Weather = (props) => {
 		return (
 		<div>
 			<img />
-			<h3>City: {'Redondo beach'}</h3>
-			<h4>Temperature: <span>76 &deg;F</span></h4>
+			<h3>City: {details.city}</h3>
+			<h4>Temperature: <span>{details.temperature} &deg;F</span></h4>
+			<h4>Description: <span>{details.desc}</span></h4>
 		</div>
 		)
 	}
 
-	return <h4>Having issues retrieving weather.</h4>
+	return <h4>Retrieving weather...</h4>
 }
 
 export default Weather;

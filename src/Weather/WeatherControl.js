@@ -12,7 +12,7 @@ class WeatherControl extends Component {
 		const val = getLSTerm('weather');
 
 		this.state = {
-			acceptLocation: false, 
+			acceptLocation: val === 'accept'? true : false, 
 		}
 		
 		this.handleAccept = this.handleAccept.bind(this);
@@ -29,29 +29,31 @@ class WeatherControl extends Component {
 			return {
 				acceptLocation: true,
 			}
-		})
+		}, console.log(this.state.acceptLocation))
 		
 	}
 
 	handleDecline(e){
 		console.log('Decline has been selected!')
 		const val = e.target.name;
-		this.setState( () => {
+		this.setState(() => {
 			localStorage.setItem('weather', val);
 			return {
 				acceptLocation: false,
 			}
-		})
+		},console.log(this.state.acceptLocation))
 
 	}
 
 	render(){
 		const body = this.state.acceptLocation;
+		// Either Sucess shows weather, Decline - response that says understood and askes again
 
 		return (
 			<div className='weather-content'>
 				<h2>Weather</h2>
 				<p>Would like to allow location services so we can provide accurate weather?</p>
+
 				{body ?(
 					<Weather/>
 				) : (
