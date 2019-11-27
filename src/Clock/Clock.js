@@ -8,7 +8,7 @@ class Clock extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			date: new Date()
+			time: new Date()
 		}
 	}
 	componentDidMount(){
@@ -20,14 +20,28 @@ class Clock extends Component{
 	}
 
 	tick(){
-		this.setState( { time:new Date() } );
+		this.setState({ 
+			time: new Date() 
+		});
 	}
 
 	render(){
+		/*HH:MM:SS AM/PM  -> digital clock*/ 
+		/*HH:MM PM/AM -> digital square*/
+		/*DW MM DD HH:MM AM/PM -> digital round*/
+
+		//Removing commas and colons in the string
+
+		const a = this.state.time;
+		const options = { hour: 'numeric', minute: 'numeric', weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }
+		// 'en-US',{ hour: 'numeric', minute: 'numeric', second: 'numeric'}
+
+
+		a.toLocaleDateString('en', options)
 
 		return (
 				<div>
-					<h2 className='digital-clock'>{`${this.state.date.toLocaleTimeString()}`}</h2>
+					<h2 className='digital-clock'>{`${a.toLocaleDateString('en', options)}`}</h2>
 				</div>
 			)
 	}
