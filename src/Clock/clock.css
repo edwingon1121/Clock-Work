@@ -1,0 +1,49 @@
+/*HH:MM:SS AM/PM*/
+.digital-clock{
+	display: inline-block;
+	width: 35%;
+  padding: 2%;
+  margin: 16px;
+  border: 10px solid #292929;
+  letter-spacing: 10px;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	font-size: 56px;
+	color: #117940;
+  background-color: black;
+}
+
+/*HH:MM PM/AM*/
+.digital-square {
+	display: inline-block;
+	width: 15%;
+  padding: 1%;
+  border: 10px solid grey;
+  letter-spacing: 10px;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	font-size: 56px;
+	color: #ccc7c7cc;
+  background-color: black;
+  border-radius: 21%;
+  box-shadow: 8px 0px 7px -3px rgb(0,0,0,0.7)
+}
+
+/*DW MM DD HH:MM AM/PM*/
+.digital-round{
+	display: inline-block;
+    width: 14%;
+    padding: 2%;
+    border: 10px solid #292929;
+    letter-spacing: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+    border-radius: 50%;
+    background-color: black;
+}
+
+
+
+/*ANALOG CLOCK*/
