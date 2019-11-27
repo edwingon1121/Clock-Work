@@ -45,6 +45,7 @@ class Form extends Component {
 			<div>
 				<h2>Sanity Check</h2>
 			<Input
+				classN={'input-feelings'}
 				label={'How are you feeling?'}
 				type={'text'}
 				value={this.state.input}

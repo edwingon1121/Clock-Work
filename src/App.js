@@ -1,8 +1,10 @@
 import React from 'react';
+import Clock from './Clock/Clock';
 import Form from './Form/Form';
 import WeatherControl from './Weather/WeatherControl'
 
 import './App.css';
+import './css/style.css';
 
 //Clock Applicaion is a simple interface of forward back 
 //that switches the user's interface below displaying weather near them
@@ -16,6 +18,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    <Clock/>
     <p>_______________________________________________________</p>
       <WeatherControl />
       <p>_________________________________</p>

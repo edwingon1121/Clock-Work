@@ -8,6 +8,7 @@ const Input = (props) => {
 			</label>
 			<br/>
 			<input 
+				className={props.classN}
 				type={props.type}
 				value={props.value}
 				onChange={props.handleChange}

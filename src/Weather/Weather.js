@@ -54,9 +54,8 @@ const Weather = (props) => {
 		return (
 		<div>
 			<WeatherIcon description={details.desc} />
-			<h3>City: {details.city}</h3>
-			<h4>Temperature: <span>{details.temperature} &deg;F</span></h4>
-			<h4>Description: <span>{details.desc}</span></h4>
+			<h3>{details.city}</h3>
+			<h4><span>{details.desc}</span> / {details.temperature} &deg;F</h4>
 		</div>
 		)
 	}

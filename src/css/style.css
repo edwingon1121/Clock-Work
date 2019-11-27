@@ -1,0 +1,18 @@
+.input-feelings{
+	width: 25%;
+  border-radius: 15px;
+  padding: 8px;
+  margin: 8px;
+  outline:none;
+}
+
+.input-feelings:focus{
+	border: #58c5cb solid 2px;
+}
+
+button {
+	padding: 8px;
+	margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
