@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+</head>
+
+<style type="text/css">
+	.clock {
+		display: block;
+		margin: auto;
+		position: relative;
+		width: 400px;
+		height: 400px;
+		border: 6px solid black;
+		border-radius: 50%;
+	}
+	.number-top {
+		position: absolute;
+		font-size: 36px;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%);
+	}
+	.number-right {
+		position: absolute;
+		font-size: 36px;
+		right: 8px;
+		top: 50%;
+		transform: translate(0%,-50%);
+	}
+	.number-bottom {
+		position: absolute;
+		font-size: 36px;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.number-left {
+		position: absolute;
+		font-size: 36px;
+		left: 8px;
+		top: 50%;
+		transform: translate(0%,-50%);
+	}
+	.hour {
+		position: absolute;
+		background-color: black;
+		height: 170px;
+		width: 18px;
+		border: 1px solid black;
+		border-radius: 50% 50% 0px 0px;
+		top: 42%;
+		left: 50%;
+		transform-origin: 50% 68%;
+		transform: translate(-50%,-50%);
+		z-index: 2;
+	}
+	.minute {
+		position: absolute;
+		background-color: black;
+		height: 220px;
+		width: 12px;
+		border: 1px solid black;
+		border-radius: 50% 50% 0px 0px;
+		top: 37%;
+		left: 50%;
+		transform-origin: 50% 73%;
+		transform: translate(-50%,-50%) rotate(90deg);
+		z-index: 1
+	}
+	.second {
+		position: absolute;
+		background-color: red;
+		height: 220px;
+		width: 3px;
+		border: 1px solid black;
+		border-radius: 50% 50% 0px 0px;
+		top: 37%;
+		left: 50%;
+		transform-origin: 50% 73%;
+		transform: translate(-50%,-50%) rotate(90deg);
+		z-index: 3
+	}
+	.center {
+		position: absolute;
+		background-color: black;
+		border: 3px solid white;
+		width: 20px;
+		height: 20px;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 4;
+	}
+
+</style>
+<body>
+	<div class="clock">
+		<div class="number-top">12</div>
+		<div class="number-right">3</div>
+		<div class="center"></div>
+		<div class='hour'></div>
+		<div class="minute"></div>
+		<div class="second"></div>
+		<div class="number-bottom">6</div>
+		<div class="number-left">9</div>
+	</div>
+	<script type="text/javascript">
+		var trackConversionByDefault = true;
+ 
+function acEnableConversionTracking() {
+                var expiration = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30);
+                document.cookie = "ac_enable_tracking=1; expires= " + expiration + "; path=/";
+                acTrackConversion();
+}
+function acTrackConversion() {
+                var trackcmp_email = '';
+                var trackcmp_conversion = '14';
+                var trackcmp_conversion_value = '0';
+                var trackcmp = document.createElement("script");
+                trackcmp.async = true;
+                trackcmp.type = 'text/javascript';
+                trackcmp.src = '//trackcmp.net/convert?actid=799006451&e='+encodeURIComponent(trackcmp_email)+'&c='+trackcmp_conversion+'&v='+trackcmp_conversion_value+
+                                                                                '&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+                var trackcmp_s = document.getElementsByTagName("script");
+                if (trackcmp_s.length) {
+                                trackcmp_s[0].parentNode.appendChild(trackcmp);
+                } else {
+                                var trackcmp_h = document.getElementsByTagName("head");
+                                trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+                }
+}
+ 
+if (trackConversionByDefault || /(^|; )ac_enable_tracking=([^;]+)/.test(document.cookie)) {
+                acEnableConversionTracking();
+}
+	</script>
+</body>
+</html>
