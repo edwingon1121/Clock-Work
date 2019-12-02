@@ -22,6 +22,69 @@
 		top: 0;
 		transform: translate(-50%);
 	}
+	.number-one{
+		position: absolute;
+		font-size: 36px;
+		left: 72%;
+		top: 5%;
+		transform: translate(-50%);
+	}
+	.number-two{
+		position: absolute;
+		font-size: 36px;
+		left: 90%;
+		top: 21%;
+		transform: translate(-50%);
+	}
+	.number-four{
+		position: absolute;
+		font-size: 36px;
+		left: 90%;
+		bottom: 21%;
+		transform: translate(-50%);
+	}
+	.number-five{
+		position: absolute;
+		font-size: 36px;
+		left: 72%;
+		bottom: 5%;
+		transform: translate(-50%);
+	}
+	.number-six{
+		position: absolute;
+		font-size: 36px;
+		right: 72%;
+		bottom: 5%;
+		transform: translate(-50%);
+	}
+	.number-seven{
+		position: absolute;
+		font-size: 36px;
+		right: 67%;
+		bottom: 5%;
+		transform: translate(-50%);
+	}
+	.number-eight{
+		position: absolute;
+		font-size: 36px;
+		right: 85%;
+		bottom: 23%;
+		transform: translate(-50%);
+	}
+	.number-ten{
+		position: absolute;
+		font-size: 36px;
+		right: 80%;
+		top: 22%;
+		transform: translate(-50%);
+	}
+	.number-eleven{
+		position: absolute;
+		font-size: 36px;
+		right: 62%;
+		top: 5%;
+		transform: translate(-50%);
+	}
 	.number-right {
 		position: absolute;
 		font-size: 36px;
@@ -96,17 +159,77 @@
 		z-index: 4;
 	}
 
+	.quarter-left {
+		position: absolute;
+		left: 25%;
+		height: 400px;
+		width: 2px;
+		background-color: red;
+		transform: translate(-50%);
+	}
+
+	.quarter-right {
+		position: absolute;
+		left: 75%;
+		height: 400px;
+		width: 2px;
+		background-color: red;
+		transform: translate(-50%);
+	}
+	.half{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		height: 2px;
+		background-color: red;
+		transform: translate(-50%) rotate(28.125deg);
+	}
+
+	.half-center{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		height: 2px;
+		background-color: red;
+		transform: translate(-50%) rotate(0deg);
+	}
+
+	.half-right{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		height: 3px;
+		background-color: red;
+		transform: translate(-50%) rotate(150deg);
+	}
+
 </style>
 <body>
 	<div class="clock">
 		<div class="number-top">12</div>
+		<div class="number-one">1</div>
+		<div class="number-two">2</div>
+		<div class="quarter-left"></div>
+		<div class="quarter-right"></div>
 		<div class="number-right">3</div>
+		<div class="number-four">4</div>
+		<div class="number-five">5</div>
+		<div class='half'></div>
+		<div class='half-right'></div>
+		<div class='half-center'></div>
 		<div class="center"></div>
 		<div class='hour'></div>
 		<div class="minute"></div>
 		<div class="second"></div>
 		<div class="number-bottom">6</div>
+		<div class="number-seven">7</div>
+		<div class="number-eight">8</div>
 		<div class="number-left">9</div>
+		<div class="number-ten">10</div>
+		<div class="number-eleven">11</div>
 	</div>
 </body>
 </html>

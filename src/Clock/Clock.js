@@ -31,7 +31,7 @@ class Clock extends Component{
 		/*DW MM DD HH:MM AM/PM -> digital round*/
 
 		//Removing commas and colons in the string
-
+		// console.log("render called ")
 		const a = this.state.time;
 		const options = { hour: 'numeric', minute: 'numeric', weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }
 		// 'en-US',{ hour: 'numeric', minute: 'numeric', second: 'numeric'}

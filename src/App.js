@@ -1,7 +1,8 @@
 import React from 'react';
 import Clock from './Clock/Clock';
+import AnalogClock from './Clock/AnalogClock';
 import Form from './Form/Form';
-import WeatherControl from './Weather/WeatherControl'
+import WeatherControl from './Weather/WeatherControl';
 
 import './App.css';
 import './css/style.css';
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
     <Clock/>
+    <AnalogClock/>
     <p>_______________________________________________________</p>
       <WeatherControl />
       <p>_________________________________</p>
