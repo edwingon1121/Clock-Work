@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header/Header';
 import Clock from './Clock/Clock';
 import AnalogClock from './Clock/AnalogClock';
 import Form from './Form/Form';
@@ -19,6 +20,7 @@ import './css/style.css';
 function App() {
   return (
     <div className="App">
+    <Header/>
     <Clock/>
     <AnalogClock/>
     <p>_______________________________________________________</p>
