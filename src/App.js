@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header/Header';
-import Clock from './Clock/Clock';
-import AnalogClock from './Clock/AnalogClock';
+import ClockSlide from './ClockSlide/ClockSlide';
 import Form from './Form/Form';
 import WeatherControl from './Weather/WeatherControl';
 
@@ -19,10 +18,9 @@ import './css/style.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className={`App dark-mode`}>
     <Header/>
-    <Clock/>
-    <AnalogClock/>
+    <ClockSlide />
     <p>_______________________________________________________</p>
       <WeatherControl />
       <p>_________________________________</p>

@@ -14,15 +14,11 @@ class AnalogClock extends Component {
 
 	componentDidMount(){
 		clearInterval(this.clockID);
-
 		this.clockID = setInterval(() => this.tick(), 1000);
 	}
 
 	tick(){
 		const d = new Date();
-
-		// console.log(d);
-
 		this.setState({
 			hours: d.getHours(),
 			minutes: d.getMinutes(),
@@ -76,7 +72,7 @@ class AnalogClock extends Component {
 		const secStyle = {transform : 'translate(-50%,-50%) rotate('+ secAngle +'deg)'}
 
 		return (
-			<div className="clock">
+			<div className="clock-trans clock">
 				<div className="num-twelve">12</div>
 				<div className="num-one">1</div>
 				<div className="num-two">2</div>

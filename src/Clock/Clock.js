@@ -40,8 +40,8 @@ class Clock extends Component{
 		a.toLocaleDateString('en', options)
 
 		return (
-				<div>
-					<h2 className='digital-clock'>{`${a.toLocaleDateString('en', options)}`}</h2>
+				<div className={`clock-trans ${this.props.className}`}>
+					<h2>{`${a.toLocaleDateString('en', options)}`}</h2>
 				</div>
 			)
 	}

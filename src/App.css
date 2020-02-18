@@ -17,6 +17,18 @@
   color: white;
 }
 
+.dark-mode {
+  background-color: #1a1919;
+  color: #999;
+}
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode .header {
+  background-color: aquamarine;
+}
 .App-link {
   color: #09d3ac;
 }
